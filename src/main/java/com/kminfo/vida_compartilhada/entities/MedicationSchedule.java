@@ -8,11 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 @Entity
 @Table(name = "medication_schedules")
 public class MedicationSchedule extends BaseEntity {
@@ -26,4 +22,30 @@ public class MedicationSchedule extends BaseEntity {
 
     @Column(name = "days_of_week")
     private String daysOfWeek;
+
+	public Medication getMedication() {
+		return medication;
+	}
+
+	public void setMedication(Medication medication) {
+		this.medication = medication;
+	}
+
+	public LocalTime getScheduledTime() {
+		return scheduledTime;
+	}
+
+	public void setScheduledTime(LocalTime scheduledTime) {
+		this.scheduledTime = scheduledTime;
+	}
+
+	public String getDaysOfWeek() {
+		return daysOfWeek;
+	}
+
+	public void setDaysOfWeek(String daysOfWeek) {
+		this.daysOfWeek = daysOfWeek;
+	}
+    
+    
 }

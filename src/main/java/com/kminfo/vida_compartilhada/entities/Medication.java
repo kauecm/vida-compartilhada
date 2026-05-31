@@ -1,55 +1,65 @@
 package com.kminfo.vida_compartilhada.entities;
 
 
-import java.time.LocalDate;
-import java.util.List;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 @Entity
 @Table(name = "medications")
 public class Medication extends BaseEntity {
 
-    @ManyToOne
-    @JoinColumn(name = "member_id")
-    private Member member;
+	  @Column(nullable = false)
+	    private String name;
 
-    @Column(nullable = false)
-    private String name;
+	    private String activeIngredient;
 
-    private String dosage;
+	    private String concentration;
 
-    private String route;
+	    private String pharmaceuticalForm;
 
-    @Column(name = "frequency_type")
-    private String frequencyType;
+	    private String manufacturer;
 
-    private String instructions;
+		public String getName() {
+			return name;
+		}
 
-    @Column(name = "start_date")
-    private LocalDate startDate;
+		public void setName(String name) {
+			this.name = name;
+		}
 
-    @Column(name = "end_date")
-    private LocalDate endDate;
+		public String getActiveIngredient() {
+			return activeIngredient;
+		}
 
-    private Boolean active = true;
+		public void setActiveIngredient(String activeIngredient) {
+			this.activeIngredient = activeIngredient;
+		}
 
-    @ManyToOne
-    @JoinColumn(name = "created_by")
-    private User createdBy;
+		public String getConcentration() {
+			return concentration;
+		}
 
-    @OneToMany(mappedBy = "medication")
-    private List<MedicationSchedule> schedules;
+		public void setConcentration(String concentration) {
+			this.concentration = concentration;
+		}
 
-    @OneToMany(mappedBy = "medication")
-    private List<MedicationLog> logs;
+		public String getPharmaceuticalForm() {
+			return pharmaceuticalForm;
+		}
+
+		public void setPharmaceuticalForm(String pharmaceuticalForm) {
+			this.pharmaceuticalForm = pharmaceuticalForm;
+		}
+
+		public String getManufacturer() {
+			return manufacturer;
+		}
+
+		public void setManufacturer(String manufacturer) {
+			this.manufacturer = manufacturer;
+		}
+	    
+	    
+    
 }

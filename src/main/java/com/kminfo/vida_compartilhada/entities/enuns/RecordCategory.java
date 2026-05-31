@@ -1,15 +1,13 @@
 package com.kminfo.vida_compartilhada.entities.enuns;
 
 
+
 public enum RecordCategory {
-    MEDICATION,
-    SYMPTOM,
-    FEVER,
+	MEDICATION,
     CONSULTATION,
-    FOOD,
-    SLEEP,
-    EXERCISE,
-    MOOD,
-    EMERGENCY,
-    OTHER
+    EXAM,
+    SYMPTOM,
+    VACCINE,
+    MEASUREMENT,
+    NOTE
 }
