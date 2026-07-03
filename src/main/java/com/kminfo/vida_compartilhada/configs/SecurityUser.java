@@ -23,7 +23,7 @@ public class SecurityUser implements UserDetails {
     getAuthorities() {
 
         return List.of(
-                new SimpleGrantedAuthority("ROLE_"+user.getrole)
+                new SimpleGrantedAuthority("ROLE_"+user.getRole().name())
         );
     }
 

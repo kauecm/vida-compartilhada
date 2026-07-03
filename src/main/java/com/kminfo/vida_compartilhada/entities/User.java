@@ -38,7 +38,15 @@ public class User extends BaseEntity {
     @Column(nullable = false)
     private UserRole role = UserRole.USER;
 
-    @OneToMany(mappedBy = "user")
+    public UserRole getRole() {
+		return role;
+	}
+
+	public void setRole(UserRole role) {
+		this.role = role;
+	}
+
+	@OneToMany(mappedBy = "user")
     private List<CareGroupUser> careGroups = new ArrayList<>();
 
 	public String getName() {
@@ -80,6 +88,7 @@ public class User extends BaseEntity {
 	public void setActive(Boolean active) {
 		this.active = active;
 	}
+	
 
     
     
